@@ -15,6 +15,10 @@ const getRandomQuote = (): Quote => {
 function App() {
   const [quote, setQuote] = useState<Quote>(getRandomQuote());
 
+  const changeQuote = () => {
+    setQuote(getRandomQuote());
+  };
+
   return (
     <div className="background">
       <div id="quote-box">
@@ -32,6 +36,9 @@ function App() {
           >
             <FaTwitter color="white" />
           </a>
+          <button id="new-quote" onClick={changeQuote}>
+            Change Quote
+          </button>
         </div>
       </div>
     </div>
